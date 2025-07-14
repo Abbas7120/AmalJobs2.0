@@ -51,13 +51,8 @@ npm install
 npm run dev
 ```
 
-### 4. Admin Access
 
-- Visit `/admin` to access the admin panel
-- Use your Supabase auth credentials to log in
-- Start adding job postings!
-
-### 5. Deployment
+### 4. Deployment
 
 - Deploy to Netlify by connecting your GitHub repository
 - Set environment variables in Netlify dashboard
