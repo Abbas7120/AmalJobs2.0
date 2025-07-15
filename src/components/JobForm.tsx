@@ -3,13 +3,25 @@ import { X, Save } from 'lucide-react';
 import { createJob, updateJob } from '../lib/database';
 import { Job } from '../types';
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> Improvement
 interface JobFormProps {
   job?: Job | null;
   onClose: () => void;
 }
 
+<<<<<<< HEAD
 const JobForm: React.FC<JobFormProps> = ({ job, onClose }) => {
   const [formData, setFormData] = useState({
+=======
+// Create a type that matches expected shape for create/update
+type JobInput = Omit<Job, 'id' | 'posted_date'>;
+
+const JobForm: React.FC<JobFormProps> = ({ job, onClose }) => {
+  const [formData, setFormData] = useState<JobInput>({
+>>>>>>> Improvement
     title: job?.title || '',
     company: job?.company || '',
     location: job?.location || '',
@@ -18,7 +30,11 @@ const JobForm: React.FC<JobFormProps> = ({ job, onClose }) => {
     description: job?.description || '',
     application_link: job?.application_link || '',
     deadline: job?.deadline ? job.deadline.split('T')[0] : '',
+<<<<<<< HEAD
     status: 'active',
+=======
+    status: job?.status || 'active', // Type-safe string literal
+>>>>>>> Improvement
     featured: job?.featured || false
   });
 
@@ -46,7 +62,13 @@ const JobForm: React.FC<JobFormProps> = ({ job, onClose }) => {
     }
   };
 
+<<<<<<< HEAD
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+=======
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+>>>>>>> Improvement
     const { name, value, type } = e.target;
     setFormData(prev => ({
       ...prev,

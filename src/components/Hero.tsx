@@ -1,5 +1,9 @@
 import React from 'react';
+<<<<<<< HEAD
 import { Search, TrendingUp, Users, MapPin } from 'lucide-react';
+=======
+import { Search, TrendingUp, Users } from 'lucide-react';
+>>>>>>> Improvement
 
 const Hero: React.FC = () => {
   return (
