@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from 'react';
+// App.tsx
+import  { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { supabase } from './lib/supabase';
 import { recordVisitorActivity, trackPageView } from './lib/analytics';
+
 import Layout from './components/Layout';
 import Hero from './components/Hero';
 import JobListings from './components/JobListings';
 import AdminLogin from './components/AdminLogin';
 import AdminPanel from './components/AdminPanel';
+import JobPage from './components/JobPage';
 
 function App() {
   const [activeSection, setActiveSection] = useState('All');
@@ -14,27 +17,22 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Check initial session
     supabase.auth.getSession().then(({ data: { session } }) => {
       setUser(session?.user ?? null);
       setIsLoading(false);
     });
 
-    // Record visitor activity on app load
     recordVisitorActivity();
     trackPageView('homepage');
 
-    // Listen for auth changes
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       setUser(session?.user ?? null);
     });
 
-    // Handle job sharing URLs with hash
     const handleHashChange = () => {
       const hash = window.location.hash;
       if (hash.startsWith('#job-')) {
         const jobId = hash.replace('#job-', '');
-        // Scroll to job card if it exists on the page
         setTimeout(() => {
           const jobElement = document.querySelector(`[data-job-id="${jobId}"]`);
           if (jobElement) {
@@ -49,7 +47,7 @@ function App() {
     };
 
     window.addEventListener('hashchange', handleHashChange);
-    handleHashChange(); // Check on initial load
+    handleHashChange();
 
     return () => {
       subscription.unsubscribe();
@@ -58,7 +56,6 @@ function App() {
   }, []);
 
   const handleLogin = () => {
-    // Refresh user state after login
     supabase.auth.getUser().then(({ data: { user } }) => {
       setUser(user);
     });
@@ -89,8 +86,9 @@ function App() {
             <AdminLogin onLogin={handleLogin} />
           )
         } />
+        <Route path="/job/:jobId" element={<JobPage />} />
         <Route path="/" element={
-          <Layout activeSection={activeSection} onSectionChange={setActiveSection}>
+          <Layout activeSection={activeSection} onSectionChange={setActiveSection} showNavigation={true}>
             <Hero />
             <JobListings activeSection={activeSection} />
           </Layout>
