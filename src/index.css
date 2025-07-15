@@ -22,8 +22,6 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
   }
-<<<<<<< HEAD
-=======
   
   /* Mobile-first responsive utilities */
   .mobile-stack {
@@ -37,14 +35,12 @@
   .mobile-full {
     @apply w-full sm:w-auto;
   }
->>>>>>> Improvement
+
 }
 
 /* Custom scrollbar for better UX */
 ::-webkit-scrollbar {
-<<<<<<< HEAD
-  width: 8px;
-=======
+
   width: 6px;
 }
 
@@ -52,7 +48,7 @@
   ::-webkit-scrollbar {
     width: 8px;
   }
->>>>>>> Improvement
+
 }
 
 ::-webkit-scrollbar-track {
@@ -97,16 +93,7 @@
 
 /* Button hover effects */
 .btn-hover:hover {
-<<<<<<< HEAD
-  transform: translateY(-1px);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
 
-/* Card hover effects */
-.card-hover:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-=======
   transform: translateY(-0.5px);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
@@ -159,5 +146,5 @@
     outline: 3px solid #3b82f6;
     outline-offset: 2px;
   }
->>>>>>> Improvement
+
 }

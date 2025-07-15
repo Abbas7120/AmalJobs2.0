@@ -38,32 +38,23 @@ const JobCard: React.FC<JobCardProps> = ({ job }) => {
     <>
       <div 
         data-job-id={job.id}
-<<<<<<< HEAD
-        className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-all duration-200"
-      >
-        <div className="flex justify-between items-start mb-4">
-          <div className="flex-1">
-            <div className="flex items-center gap-2 mb-2">
-              <h3 className="text-xl font-semibold text-gray-900">{job.title}</h3>
-=======
+
         className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6 hover:shadow-md transition-all duration-200"
       >
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 sm:gap-0 mb-4">
           <div className="flex-1">
             <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-2">
               <h3 className="text-lg sm:text-xl font-semibold text-gray-900">{job.title}</h3>
->>>>>>> Improvement
+
               {job.featured && (
                 <span className="bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-1 rounded-full">
                   Featured
                 </span>
               )}
             </div>
-<<<<<<< HEAD
-            <div className="flex items-center gap-4 text-gray-600 mb-3">
-=======
+
             <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-sm sm:text-base text-gray-600 mb-3">
->>>>>>> Improvement
+
               <div className="flex items-center gap-1">
                 <Building2 className="h-4 w-4" />
                 <span>{job.company}</span>
@@ -78,11 +69,9 @@ const JobCard: React.FC<JobCardProps> = ({ job }) => {
               </div>
             </div>
           </div>
-<<<<<<< HEAD
-          <span className={`px-3 py-1 rounded-full text-sm font-medium ${getCategoryColor(job.category)}`}>
-=======
+
           <span className={`self-start sm:self-auto px-3 py-1 rounded-full text-sm font-medium ${getCategoryColor(job.category)}`}>
->>>>>>> Improvement
+
             {job.category}
           </span>
         </div>
@@ -93,31 +82,22 @@ const JobCard: React.FC<JobCardProps> = ({ job }) => {
         
         <button
           onClick={() => setIsDetailsModalOpen(true)}
-<<<<<<< HEAD
-          className="text-blue-600 hover:text-blue-800 text-sm font-medium mb-4 flex items-center gap-1 transition-colors duration-200"
-=======
+
           className="text-blue-600 hover:text-blue-800 text-sm font-medium mb-4 flex items-center gap-1 transition-colors duration-200 w-full sm:w-auto justify-center sm:justify-start"
->>>>>>> Improvement
+
         >
           <Eye className="h-4 w-4" />
           View Full Details
         </button>
 
-<<<<<<< HEAD
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <button
-              onClick={handleApplyClick}
-              disabled={isExpired}
-              className={`px-6 py-2 rounded-lg font-medium transition-colors duration-200 flex items-center gap-2 ${
-=======
+
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
             <button
               onClick={handleApplyClick}
               disabled={isExpired}
               className={`px-4 sm:px-6 py-2 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center gap-2 ${
->>>>>>> Improvement
+
                 isExpired
                   ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
                   : 'bg-blue-600 text-white hover:bg-blue-700'
@@ -129,28 +109,21 @@ const JobCard: React.FC<JobCardProps> = ({ job }) => {
             
             <button
               onClick={() => setIsShareModalOpen(true)}
-<<<<<<< HEAD
-              className="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors duration-200 flex items-center gap-2"
-=======
+
               className="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors duration-200 flex items-center justify-center gap-2"
->>>>>>> Improvement
+
             >
               <Share2 className="h-4 w-4" />
               Share
             </button>
           </div>
 
-<<<<<<< HEAD
-          <div className="flex items-center gap-2">
-            <Calendar className="h-4 w-4 text-gray-400" />
-            <button
-              className={`px-4 py-2 rounded-lg font-medium text-sm transition-colors duration-200 ${
-=======
+
           <div className="flex items-center justify-center sm:justify-end gap-2">
             <Calendar className="h-4 w-4 text-gray-400" />
             <button
               className={`px-3 sm:px-4 py-2 rounded-lg font-medium text-xs sm:text-sm transition-colors duration-200 ${
->>>>>>> Improvement
+
                 isExpired
                   ? 'bg-gray-400 text-white cursor-not-allowed'
                   : 'bg-red-600 text-white hover:bg-red-700'
